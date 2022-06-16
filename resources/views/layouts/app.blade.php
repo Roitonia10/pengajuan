@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>DPPPA SUMSEL</title>
+    <title>Register</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -30,7 +30,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm position-fixed w-100">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{-- DPPPA SUMSEL --}}
+                    {{-- Register --}}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>

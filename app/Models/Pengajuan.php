@@ -9,6 +9,8 @@ class Pengajuan extends Model
 {
     use HasFactory;
 
+    protected $table = 'tb_pengajuans';
+
     protected $guarded = [];
 
     public function user(){

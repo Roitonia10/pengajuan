@@ -9,6 +9,8 @@ class Coa extends Model
 {
     use HasFactory;
 
+    protected $table = 'tb_coas';
+
     protected $guarded = [];
 
     public function user(){

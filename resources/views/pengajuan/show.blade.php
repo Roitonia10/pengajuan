@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.dashboard')
 
 @section('content')
     <div class="container mt-4">
@@ -6,7 +6,7 @@
             <div class="card-header">
                 <div class="d-flex justify-content-between align-items-center">
                     <div>
-                        Detail
+                        Detail Item Pengajuan
                     </div>
                     <div>
                         <a href="{{ route('pengajuan.index') }}" class="btn btn-primary">Kembali</a>
@@ -23,17 +23,17 @@
                         </td>
                     </tr>
                     <tr>
+                        <th>Nama Pengaju</th>
+                        <th>:</th>
+                        <td>
+                            {{ $pengajuan->user->nama }}
+                        </td>
+                    </tr>
+                    <tr>
                         <th>Prodi</th>
                         <th>:</th>
                         <td>
                             {{ $pengajuan->prodi }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Pengaju</th>
-                        <th>:</th>
-                        <td>
-                            {{ $pengajuan->user->nama }}
                         </td>
                     </tr>
                     <tr>
@@ -46,10 +46,29 @@
                 </table>
                 <div class="card">
                     <div class="card-header">
-                        Item Pengajuan
+                       Tabel Pengajuan
                     </div>
                     <div class="card-body">
                         <table style="width: 100%" border="1">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Account Number
+                                </th>
+                                <th>
+                                    Account Name
+                                </th>
+                                <th>
+                                    Activity Name
+                                </th>
+                                <th>
+                                    Nominal Budget
+                                </th>
+                                <th>
+                                    Realization
+                                </th>
+                            </tr>
+                        </thead>
                             @foreach ($items as $item)
                             <tr>
                                 <th>{{ $item->coa->noakun }}</th>

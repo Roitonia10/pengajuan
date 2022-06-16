@@ -21,6 +21,8 @@ class UserSeeder extends Seeder
             'email' => 'admin@gmail.com',
             'notelp' => '123123',
             'jabatan' => 'ppa'
+
         ]);
+
     }
 }

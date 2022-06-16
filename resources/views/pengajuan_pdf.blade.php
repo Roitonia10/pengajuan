@@ -7,13 +7,16 @@
     <title></title>
 </head>
 <body>
+
     <div class="container mt-4">
         <div class="card">
             <div class="card-header">
                 <div class="d-flex justify-content-between align-items-center">
                     <div>
-                        Detail
-                    </div>
+                        <h2><b>PERMOHONAN PERSETUJUAN PENCAIRAN DANA FAKULTAS TEKNOLOGI INFORMASI </b></h2>
+                        </div>
+                    <hr>
+                    <p> Berikut ini informasi detail mengenai pencairan dana :
                     <div>
                         {{-- <a href="{{ route('pengajuan.index') }}" class="btn btn-primary">Kembali</a> --}}
                     </div>
@@ -22,40 +25,59 @@
             <div class="card-body">
                 <table class="table">
                     <tr>
-                        <th>Tanggal Pengajuan</th>
+                        <th style = "width : 30%;"> Tanggal Pengajuan</th>
                         <th>:</th>
                         <td>
-                            {{ $pengajuan->tanggal_pengajuan }}
+                            {{ $pengajuan->tanggal_pengajuan }} <br>
                         </td>
                     </tr>
                     <tr>
-                        <th>Prodi</th>
+                        <th style = "width : 30%;">Program Studi</th>
                         <th>:</th>
                         <td>
                             {{ $pengajuan->prodi }}
                         </td>
                     </tr>
                     <tr>
-                        <th>Pengaju</th>
+                        <th style = "width : 30%;"> Nama Pengaju</th>
                         <th>:</th>
                         <td>
-                            {{ $pengajuan->user->nama }}
+                            {{ $pengajuan->user->nama }} <br>
                         </td>
                     </tr>
                     <tr>
-                        <th>Status</th>
+                        <th style = "width : 30%;">Status Pengajuan  </th>
                         <th>:</th>
                         <td>
                             <div class="badge badge-{{ $pengajuan->status == 'selesai' ? 'success' : 'danger' }} text-uppercase">{{ $pengajuan->status }}</div>
-                        </td>
+                        </td> <br>
                     </tr>
                 </table>
                 <div class="card">
-                    <div class="card-header">
-                        Item Pengajuan
-                    </div>
+                    <div class="card-header"> <br>
+                        <b> Tabel Pengajuan : </b>
+                    </div> <br>
                     <div class="card-body">
                         <table style="width: 100%" border="1">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Account Number
+                                </th>
+                                <th>
+                                    Account Name
+                                </th>
+                                <th>
+                                    Activity Name
+                                </th>
+                                <th>
+                                    Nominal Budget
+                                </th>
+                                <th>
+                                    Realization
+                                </th>
+                            </tr>
+                        </thead>
                             @foreach ($items as $item)
                             <tr>
                                 <th>{{ $item->coa->noakun }}</th>

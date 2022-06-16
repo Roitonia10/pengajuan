@@ -13,7 +13,7 @@ class AddTtdColumnToPengajuanTable extends Migration
      */
     public function up()
     {
-        Schema::table('pengajuans', function (Blueprint $table) {
+        Schema::table('tb_pengajuans', function (Blueprint $table) {
             $table->text('ttd')->nullable();
         });
     }

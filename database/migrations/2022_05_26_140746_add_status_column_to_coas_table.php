@@ -13,7 +13,7 @@ class AddStatusColumnToCoasTable extends Migration
      */
     public function up()
     {
-        Schema::table('coas', function (Blueprint $table) {
+        Schema::table('tb_coas', function (Blueprint $table) {
             $table->enum('status', ['proses', 'disetujui', 'ditolak'])->nullable();
         });
     }

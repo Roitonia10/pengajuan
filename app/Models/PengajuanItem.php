@@ -9,6 +9,8 @@ class PengajuanItem extends Model
 {
     use HasFactory;
 
+    protected $table = 'tb_pengajuan_items';
+
     protected $guarded = [];
 
     public function coa(){

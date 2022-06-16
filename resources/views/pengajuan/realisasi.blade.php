@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.dashboard')
 
 @section('content')
     <div class="container">
@@ -6,10 +6,7 @@
             <div class="card-header">
                 <div class="d-flex justify-content-between align-items-center">
                     <div>
-                        Pengajuan
-                    </div>
-                    <div>
-                        <a href="{{ route('pengajuan.index') }}" class="btn btn-primary">Back</a>
+                        Submission
                     </div>
                 </div>
             </div>
@@ -21,7 +18,7 @@
                     <input type="hidden" name="tanggal_pengajuan" value="{{ now() }}">
                     <input type="hidden" name="status" value="proses">
                     <div class="form-group">
-                        <label for="">Prodi</label>
+                        <label for="">Major</label>
                         <select name="prodi" id="" class="form-control">
                             <option value="">Choose Prodi...</option>
                             <option value="Sistem Informasi" {{ $pengajuan->prodi == "Sistem Informasi" ? 'selected' : '' }}>Sistem Informasi</option>
@@ -29,9 +26,9 @@
                             <option value="Fakultas" {{ $pengajuan->prodi == "Fakultas" ? 'selected' : '' }}>Fakultas/option>
                         </select>
                     </div>
-                    
+
                     <div class="form-group container1">
-                        {{-- <h1 class="add_form_field btn btn-primary">Add New Field &nbsp; 
+                        {{-- <h1 class="add_form_field btn btn-primary">Add New Field &nbsp;
                           <span style="font-size:16px; font-weight:bold;">+ </span>
                         </h1> --}}
                         <form action="{{ route('pengajuan.realisasi.store') }}" method="POST">
@@ -39,18 +36,20 @@
                         @foreach ($items as $item)
                         <div class="row mt-2">
                             <input type="hidden" name="id[]" value="{{ $item->id }}">
-                            <div class="col">
+                            <div class="col"> Name of Activity
                                 <input type="text" class="form-control" value="{{ $item->nama_kegiatan }}" placeholder="Nama Kegiatan" disabled/>
                             </div>
-                            <div class="col">
+                            <div class="col"> Budget
                                 <input type="number" class="form-control" value="{{ $item->jumlah_pengajuan }}" placeholder="Jumlah Pengajuan" disabled/>
                             </div>
-                            <div class="col">
+                            <div class="col"> Realization
                                 <input type="number" name="realisasi[]" id="" class="form-control" value="{{ $item->realisasi }}">
                             </div>
                           </div>
                           @endforeach
-                          <button class="btn btn-primary">Submit</button>
+                          <div>
+                        <a href="{{ route('pengajuan.index') }}" class="btn btn-primary my-4">Back</a>
+                          <button class="btn btn-primary ml-3 my-4">Submit</button>
                         </form>
                         {{-- @foreach ($items as $item)
                             <div class="form-group row">
@@ -67,13 +66,13 @@
                         @endforeach --}}
                     </div>
                     <div>
-                        
+
                     </div>
 
-                    
+
                 {{-- </form> --}}
                 {{-- <div class="container1">
-                    <h1 class="add_form_field btn btn-primary">Add New Field &nbsp; 
+                    <h1 class="add_form_field btn btn-primary">Add New Field &nbsp;
                       <span style="font-size:16px; font-weight:bold;">+ </span>
                     </h1>
                     <div>
